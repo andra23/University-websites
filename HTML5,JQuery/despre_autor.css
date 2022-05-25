@@ -1,0 +1,455 @@
+header {
+  background: linear-gradient(to right, white, #dba882);
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 4px 3px 8px 1px #969696;
+  -webkit-box-shadow: 4px 3px 8px 1px #969696;
+
+}
+
+header,
+main {
+  margin: 1rem 0;
+}
+
+main *+* {
+  position: relative;
+  z-index: 1;
+  background: white;
+  margin-bottom: 10px;
+
+}
+
+body {
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+
+
+}
+
+.logo{
+  color:  #663300;
+  letter-spacing: 8px;
+  
+}
+
+.logo:hover{
+  color:  #663300;
+  letter-spacing: 8px;
+  animation: text 3s 1;
+}
+
+@keyframes text {
+  0% {
+    color: black;
+
+  }
+
+  30% {
+    letter-spacing: 25px;
+
+  }
+
+  85% {
+    letter-spacing: 8px;
+
+  }
+}
+
+/* MENU */
+
+.dropbtn {
+  background-color: #dba882;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+
+
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  right: 0;
+
+
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+
+}
+
+.dropdown-content a:hover {
+  background-color: #e0b596;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #e0b596;
+}
+
+
+.dropdown_content a.active {
+  background-color: #dba882;
+  color: white;
+}
+
+.submenu {
+  display: none;
+  background-color: #e0cfc2;
+
+}
+
+#recenzie:hover>.submenu {
+  display: block;
+}
+
+/* DROPDOWN AUTHORS LIST */
+
+.dropbtn1 {
+  background-color: #663300;
+  border-radius: 50px 50px 50px 50px;
+  color: white;
+  padding: 14px;
+  border: none;
+  cursor: pointer;
+
+}
+
+.dropdown1 {
+  position: relative;
+  margin-top: 10px;
+  margin-left: 97%;
+  display: inline-block;
+}
+
+.dropdown-content1 {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  right: 0;
+  z-index: 2;
+}
+
+.dropdown-content1 a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+
+
+}
+
+.dropdown-content1 a:hover {
+  background-color: #f1f1f1
+}
+
+.dropdown1:hover .dropdown-content1 {
+  display: flex;
+}
+
+.dropdown1:hover .dropbtn1 {
+  background-color: #969696;
+}
+
+table {
+  position: relative;
+  margin-top: 30px;
+  width: 100%;
+
+
+
+}
+
+td,
+th {
+  border: 0.5px solid black;
+  border-radius: 10px;
+  text-align: center;
+  padding: 5px;
+
+}
+
+
+th {
+  background-color: #e0b596;
+}
+
+
+h3 {
+  text-decoration: overline;
+}
+
+
+
+* {
+  box-sizing: border-box
+}
+
+/* Container needed to position the overlay. Adjust the width as needed */
+.container3 {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+}
+
+/* Make the image to responsive */
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* The overlay effect - lays on top of the container and over the image */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5);
+  /* Black see-through */
+  color: #f1f1f1;
+  width: 100%;
+  transition: .5s ease;
+  opacity: 0;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* When you mouse over the container, fade in the overlay title */
+.container3:hover .overlay {
+  opacity: 1;
+}
+
+
+
+.footer {
+
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.footer_content {
+  background-color: #e0cfc2;
+  height: 30px;
+  text-align: center;
+}
+
+/*Time for the CSS*/
+
+
+.slider {
+  width: 640px;
+  /*Same as width of the large image*/
+  position: relative;
+  /*Instead of height we will use padding*/
+  padding-top: 320px;
+  /*That helps bring the labels down*/
+  margin: 100px auto;
+}
+
+
+/*Last thing remaining is to add transitions*/
+.slider>img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+  transition: all 0.5s;
+
+}
+
+.slider input[name='slide_switch'] {
+  display: none;
+}
+
+
+.slider label {
+  /*Lets add some spacing for the thumbnails*/
+  margin: 18px 0 0 18px;
+  border: 5px solid #e0b596;
+  border-radius: 10px;
+  float: left;
+  transition: all 0.5s;
+
+
+  /*Default style = low opacity*/
+
+}
+
+.slider label img {
+  display: block;
+}
+
+/*Time to add the click effects*/
+
+.slider input[name='slide_switch']:hover+label {
+  opacity: 1;
+
+}
+
+/*Clicking any thumbnail now should change its opacity(style)*/
+/*Time to work on the main images*/
+.slider input[name='slide_switch']~img {
+  /*opacity: 0;*/
+  transform: scale(1.1);
+}
+
+/*That hides all main images at a 110% size
+On click the images will be displayed at normal size to complete the effect
+*/
+.slider input[name='slide_switch']:hover+label+img {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/*Clicking on any thumbnail now should activate the image related to it*/
+
+.slider input[name='slide_switch']:checked+label {
+  opacity: 1;
+}
+
+
+.slider input[name='slide_switch']:checked+label+img {
+  opacity: 1;
+  transform: scale(1);
+
+}
+
+@media only screen and (max-width: 700px) {
+  .slider{
+    width: 320px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .dropdown1{
+  position: relative;
+  margin-top: 10px;
+  margin-left: 90%;
+  display: inline-block;
+  }
+}
+#pause{
+  background-color: #663300;
+  color: white;
+  border: solid;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.options{
+  display:flex;
+  flex-direction: row;
+  left: 40%; 
+  display: inline-block; height: auto; width: 100%; 
+  font-size: 20px;
+  padding: 20px;
+}
+#timer {
+  font-size: 20px;
+  border: solid;
+  border-color: #663300;
+  background-color: #e0b596;
+  border-radius: 10px;
+}
+
+input.reluare {
+  transform: scale(1.5);
+}
+#myInput {
+  border: solid;
+  border-color: #663300;
+  border-radius: 20px;
+  height: 30px;
+}
+.filter-container{
+  display: flex;
+}
+#auth-form{
+  border: solid;
+  border-color:#663300;
+  
+}
+#type-form{
+  border: solid;
+  border-color:#663300
+}
+.popup{
+  width: 900px;
+  margin: auto;
+  text-align: center
+}
+.popup img{
+  width: 200px;
+  height: 200px;
+  cursor: pointer
+}
+.show{
+  z-index: 999;
+  display: none;
+}
+.show .overlay{
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.66);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.show .img-show{
+  width: 600px;
+  height: 400px;
+  background: #FFF;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  overflow: hidden
+}
+.img-show span{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 99;
+  cursor: pointer;
+}
+.img-show img{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/*End style*/
+
+
+

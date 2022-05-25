@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Librărie online</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+        <!-- logo -->
+        <div class="container">
+            <div class="row">
+                <h1 class="logo">Bibliotecă Online</h1>
+            </div>
+        </div>
+
+        <!-- meniu -->
+
+        <div class="dropdown">
+            <button class="dropbtn"><i class="fa fa-bars" style="font-size: 1.73em;"></i></button>
+            <div class="dropdown-content">
+                <a href="index.html" class="active">Acasă</a>
+                <a href="cărți.html">Cărți</a>
+                <a href="despre_autor.html">Despre Autor</a>
+                <div id="recenzie">
+                <a href="#">Recenzii</a>
+                <div class="submenu">
+                    <a href="recenzii.html">Toate Recenziile</a>
+                    <a href="adauga_recenzie.html">Recenzia Ta</a>
+                </div>
+                <a href="login.html">LOGIN</a>
+                <a href="sign_in.html">SIGN UP</a></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="home_background">
+            <article class="home_quote">
+                <h2>Cel mai bun</h2>
+                <h2>loc pentru</h2>
+                <h2>biblioteca ta</h2>
+            </article>
+
+        </section>
+        <div class="search_option">
+            <section class="selector_title">
+
+                <img src="Assets/logo_home.png" width="100" height="100" alt="Logo">
+
+                <article>
+                    <h3>O</h3>
+                    <h2>Bibliotecă Universală</h2>
+                    <article>
+                        <h5 class="hand_writing_text">De la realism la fantezie</h5>
+                    </article>
+                </article>
+            </section>
+
+            <selection class="wrap">
+                <!-- Drop-down list -->
+                <!--Choose Category-->
+                <select name="Categorie" class="category">
+                    <option selected disabled>Categorie</option>
+                    <optgroup label="Beletristică">
+                        <option value="Ficțiune">Ficțiune</option>
+                        <option value="Aventură">Aventură</option>
+                        <option value="Dramă">Dramă</option>
+                        <option value="Poezie">Poezie</option>
+                        <option value="Istorie">Istorie</option>
+                        <option value="Thriller">Thriller</option>
+                        <option value="Cărți de dragoste">Cărți de dragoste</option>
+                    </optgroup>
+                    <optgroup label="Dezvoltare personală">
+                        <option value="Psihologie și consiliere">Psihologie și consiliere</option>
+                        <option value="Spiritualitate">Spiritualitate</option>
+                        <option value="Științe">Științe</option>
+                    </optgroup>
+                    <optgroup label="Psihologie">
+                        <option value="Personalitate">Personalitate</option>
+                        <option value="Psihologia copilului">Psihologia copilului</option>
+                        <option value="Psihologia femeii">Psihologia femeii</option>
+                    </optgroup>
+                    <option value="Cărți de bucate">Cărți de bucate</option>
+                    <option value="Călătorii,ghiduri,hărți">Călătorii,ghiduri,hărți</option>
+
+                </select>
+                <form class="search">
+                    <input type="text" class="searchTerm" placeholder="Caută...">
+                    <button type="submit" class="searchButton">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </form>
+            </selection>
+
+        </div>
+
+
+    </main>
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="footer_content">
+            &copy; Andra Trifan
+            <img id="home" src="Assets/icon_1.png" width="20" height="20">
+            <img id="next" src="Assets/icon_2.png" width="20" height="20"> 
+           
+        </div>
+    </footer>
+</body>
+
+</html>

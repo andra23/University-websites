@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <link rel="stylesheet" href="despre_autor.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,800,300' rel='stylesheet' type='text/css">
+    <script src="https://kit.fontawesome.com/9db0d054af.js" crossorigin="anonymous"></script>
+    <title>Cărți</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+        <!-- logo -->
+        <div class="container">
+            <div class="row">
+                <h1 class="logo">Bibliotecă Online</h1>
+            </div>
+        </div>
+
+        <!-- meniu -->
+
+        <div class="dropdown">
+            <button class="dropbtn"><i class="fa fa-bars" style="font-size: 1.73em;"></i></button>
+            <div class="dropdown-content">
+                <a href="index.html" class="active">Acasă</a>
+                <a href="cărți.html">Cărți</a>
+                <a href="despre_autor.html">Despre Autor</a>
+                <div id="recenzie">
+                    <a href="#">Recenzii</a>
+                    <div class="submenu">
+                        <a href="recenzii.html">Toate Recenziile</a>
+                        <a href="adauga_recenzie.html">Recenzia Ta</a>
+                    </div>
+                    <a href="login.html">LOGIN</a>
+                    <a href="sign_in.html">SIGN UP</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+
+        <div class="dropdown1">
+            <button class="dropbtn1"><i class="fa-solid fa-filter"></i></button>
+            <div class="dropdown-content1">
+                <a href="#alain_fournier">Alain Fournier</a>
+                <a href="#amanda_quick">Amanda Quick</a>
+                <a href="#">Nichita Stanescu</a>
+                <a href="#">Marcus Zusak</a>
+                <a href="#">J.R.R Tolkien</a>
+            </div>
+        </div>
+
+
+
+        <div class="slider" id="slides">
+            <input type="radio" name="slide_switch" id="id1" />
+
+            <label for="id1">
+                <img src="Assets/citat_1.jpg" width="100" />
+            </label>
+            <img src="Assets/citat_1.jpg" class="slide" />
+
+            <!--Lets show the second image by default on page load-->
+            <input type="radio" name="slide_switch" id="id2" checked="checked" />
+            <label for="id2">
+                <img src="Assets/citat_2.jpg" width="100" />
+            </label>
+            <img src="Assets/citat_2.jpg" class="slide" />
+
+            <input type="radio" name="slide_switch" id="id3" />
+            <label for="id3">
+                <img src="Assets/citat_3.webp" width="100" />
+            </label>
+            <img src="Assets/citat_3.webp" class="slide" />
+
+            <input type="radio" name="slide_switch" id="id4" />
+            <label for="id4">
+                <img src="Assets/citat_4.jpg" width="100" />
+            </label>
+            <img src="Assets/citat_4.jpg" class="slide" />
+
+            <input type="radio" name="slide_switch" id="id5" />
+            <label for="id5">
+                <img src="Assets/citat_5.jpg" width="100" />
+            </label>
+            <img src="Assets/citat_5.jpg" class="slide" />
+        </div>
+        <div class="options">
+            <button id="pause">Play/Pause</button>
+            <input type="checkbox" id="reluare" name="realuare" value="reluare" class="reluare">
+            <label for="realuare" id="rel"> Reluare</label>
+            <select name="timer" id="timer">
+                <option value="1000">1s</option>
+                <option value="2000">2s</option>
+                <option value="3000">3s</option>
+            </select>
+        </div>
+
+        <script>
+
+            var playing = true;
+            var pauseButton = document.getElementById('pause');
+            var myIndex = 0;
+
+            function carousel() {
+                var i;
+                var x = document.getElementsByClassName('slide');
+
+
+                myIndex++;
+                if (myIndex > x.length && document.getElementById('reluare').checked == false) {
+                    //console.log("akkf");
+                    return false;
+                }
+                if (myIndex > x.length) {
+                    myIndex = 1
+                }
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                x[myIndex - 1].style.display = "block";
+
+            }
+
+            function pauseSlideshow() {
+                console.log("pause");
+                pauseButton.innerHTML = 'Play';
+                playing = false;
+                clearInterval(slideInterval);
+            }
+
+            function playSlideshow() {
+                pauseButton.innerHTML = 'Pauză';
+                playing = true;
+                slideInterval = setInterval(carousel, 1000);
+            }
+
+            pauseButton.onclick = function () {
+                if (playing) {
+                    pauseSlideshow();
+                }
+                else {
+                    playSlideshow();
+                }
+            };
+
+            document.getElementById('timer').addEventListener('change', function handleChange(event) {
+                console.log(event.target.value);
+                clearInterval(slideInterval);
+                slideInterval = setInterval(carousel, document.getElementById('timer').selectedOptions[0].value);
+
+
+            });
+
+            carousel();
+            playSlideshow();
+
+
+        </script>
+        <script>
+            function sortTable(n) {
+                var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+                table = document.getElementById("myTable");
+                switching = true;
+                // Set the sorting direction to ascending:
+                dir = "asc";
+                /* Make a loop that will continue until
+                no switching has been done: */
+                while (switching) {
+                    // Start by saying: no switching is done:
+                    switching = false;
+                    rows = table.rows;
+                    /* Loop through all table rows (except the
+                    first, which contains table headers): */
+                    for (i = 1; i < (rows.length - 1); i++) {
+                        // Start by saying there should be no switching:
+                        shouldSwitch = false;
+                        /* Get the two elements you want to compare,
+                        one from current row and one from the next: */
+                        x = rows[i].getElementsByTagName("TD")[n];
+                        y = rows[i + 1].getElementsByTagName("TD")[n];
+                        /* Check if the two rows should switch place,
+                        based on the direction, asc or desc: */
+                        if (dir == "asc") {
+                            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                                // If so, mark as a switch and break the loop:
+                                shouldSwitch = true;
+                                break;
+                            }
+                        } else if (dir == "desc") {
+                            if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                                // If so, mark as a switch and break the loop:
+                                shouldSwitch = true;
+                                break;
+                            }
+                        }
+                    }
+                    if (shouldSwitch) {
+                        /* If a switch has been marked, make the switch
+                        and mark that a switch has been done: */
+                        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                        switching = true;
+                        // Each time a switch is done, increase this count by 1:
+                        switchcount++;
+                    } else {
+                        /* If no switching has been done AND the direction is "asc",
+                        set the direction to "desc" and run the while loop again. */
+                        if (switchcount == 0 && dir == "asc") {
+                            dir = "desc";
+                            switching = true;
+                        }
+                    }
+                }
+            }
+        </script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        
+
+        <script>
+            $(document).ready(function () {
+                $("#myInput").on("keyup", function () {
+                    var value = $(this).val().toLowerCase();
+                    $("#myTable tr").filter(function () {
+                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                    });
+                });
+            });
+        </script>
+
+        <script>
+            $(document).ready(function () {
+                $(".input").on("click", function () {
+                    // console.log($(".year").eq(0).html());
+                    name_list = []
+                    list = []
+                    $("#myTable tr").hide()
+                    var flag = 1
+                    $("input:checkbox[name=input]:checked").each(function () {
+                        flag = 0;
+                        var value = $(this).val().toLowerCase();
+                        if (value === 'contemporani') {
+                            for (var i = 0; i < $(".year").length; i++) {
+                                if (!/[-]/i.test($(".year").eq(i).html())) {
+                                    list.push($(".year").eq(i).html());
+                                }
+                            }
+                        }
+                        else if (value === 'necontemporani') {
+                            for (var i = 0; i < $(".year").length; i++) {
+                                if (/[-]/i.test($(".year").eq(i).html())) {
+                                    list.push($(".year").eq(i).html());
+                                }
+                            }
+                        }
+                        else {
+                            for (var i = 0; i < $(".year").length; i++) {
+                                list.push($(".year").eq(i).html());
+
+                            }
+                        }
+                        $("#myTable tr").filter(function () {
+                            for (var i = 0; i < list.length; i++) {
+                                value = list[i];
+                                if ($(this).text().toLowerCase().indexOf(value) > -1)
+                                    $(this).show()
+                            }
+                        });
+                    });
+                    if (flag == 1)
+                        $("#myTable tr").show()
+                });
+            });
+        </script>
+
+
+
+        <script>
+            // $(document).on('dblclick', '.type', function () {
+            //   if (this.checked) {
+            //     $(this).prop('checked', false);
+            //   for (var i = 0; i < $('#myTable tr:visible').length; i++) {
+            //     $('#myTable tr:visible')[i].show();
+            //}
+            // $("#myTable tr").show();
+
+            //}
+            //});
+            $(document).ready(function () {
+                $(".type").on("click", function () {
+                    name_list = []
+                    // $("#myTable tr").hide()
+                    var flag = 1
+                    $("input:radio[name=type]:checked").each(function () {
+                        flag = 0;
+                        var value = $(this).val().toLowerCase();
+
+                        $("#myTable tr").filter(function () {
+                            var show = ($(this).text().toLowerCase().indexOf(value) > -1) && ($(this).is(':visible'));
+                            console.log($(this).is(':visible'));
+                            if (show)
+                                $(this).show()
+                            else {
+                                var elem = $(this);
+                                elem.hide();
+                                $(document).on('dblclick', '.type', function () {
+                                    if (this.checked) {
+                                        $(this).prop('checked', false);
+                                        // elem.show();
+                                        $("#myTable tr").show();
+
+                                    }
+                                });
+
+                            }
+
+
+                        });
+                    });
+                    if (flag == 1)
+                        $("#myTable tr").show()
+                });
+            });
+        </script>
+        <div class="filter-container">
+
+            <div class="filter">
+                <p><b>Cauta:</b></p>
+                <input id="myInput" type="text" placeholder="Search.." class="search">
+                <section style="overflow-x: auto;"></section>
+                <p><b>Autori:</b></p>
+                <form action="/action_page.php" id="auth-form">
+                    <input type="checkbox" class="input" name="input" value="contemporani">
+                    <label for="vehicle1"> contemporani</label><br>
+                    <input type="checkbox" class="input" name="input" value="necontemporani">
+                    <label for="vehicle2"> necontemporani</label><br>
+                </form>
+                <p><b>Curent / gen literar:</b></p>
+                <form action="/action_page.php" id="type-form">
+                    <input type="radio" class="type" id="simbolism" name="type" value="simbolism">
+                    <label for="simbolism">simbolism</label><br>
+                    <input type="radio" class="type" id="romantism" name="type" value="romantism">
+                    <label for="romantism">romantism</label><br>
+                    <input type="radio" class="type" id="neomodernism" name="type" value="neomodernism">
+                    <label for="neomodernism">neomodernism</label><br>
+                    <input type="radio" class="type" id="fantezie" name="type" value="fantezie">
+                    <label for="fantezie">fantezie</label>
+                </form>
+
+            </div>
+            <table id="myTable">
+                <tbody id="myTable1">
+                    <col style="width:20%">
+                    <col style="width:50%">
+                    <col style="width:30%">
+                    <thead>
+                        <tr>
+                            <th onclick="sortTable(0)">Nume autor </th>
+                            <th>Descriere</th>
+                            <th>Lucrări</th>
+
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td id="alain_fournier">
+                            <div class="container3">
+                                <img src="Assets/Alain_Fournier.jpg" alt="Alain Fournier" class="image">
+                                <div class="overlay">Henri-Alban Fournier, 1905, Chapelle d'Angillon</div>
+                            </div>
+                            <h3>
+                                Alain Fournier
+                            </h3>
+
+                            <p class="year">1886-1914</p>
+                            <p>Simbolism</p>
+                        </td>
+                        <td>
+                            <h3> Biografie</h3>
+                            <p>
+
+                                Pe 1 iunie 1905, un licean de 18 ani, <a
+                                    href="https://ro.wikipedia.org/wiki/Alain-Fournier"><b>Henri-Alban Fournier</b></a>,
+                                intalneste intamplator, pe
+                                scarile
+                                de la
+                                Petit Palais din Paris, o tanara zvelta si eleganta.
+                                O urmareste, afla unde locuieste si cateva zile mai tarziu schimba cu ea cateva cuvinte,
+                                doar
+                                pentru
+                                a afla ca este logodita.
+                                Aceasta intalnire care marcheaza definitiv destinul lui Henri-Alban Fournier va fi apoi
+                                redata,
+                                aproape identic, in unicul sau roman, publicat in 1913 sub semnatura Alain Fournier: Le
+                                grand
+                                Meaulnes.
+                                Cartea are un succes instantaneu si rateaza la limita Premiul Goncourt: obtine cinci
+                                voturi
+                                din
+                                cele
+                                sase necesare.
+                                La inceputul anului 1914, Fournier incepe sa scrie al doilea roman, Colombe Blanchet.
+                                Nu-l va termina. Mobilizat in august, este dat disparut pe 22 septembrie, la sud de
+                                Verdun.
+                                Optzeci
+                                si cinci de ani mai tarziu, Le Monde propune cititorilor sai sa aleaga cele mai
+                                importante o
+                                suta de
+                                carti ale secolului XX.
+                                Le Grand Meaulnes se afla intre primele zece, alaturi de In cautarea timpului pierdut,
+                                Procesul,
+                                Calatorie la capatul noptii sau Fructele maniei.
+
+                            </p>
+                        </td>
+                        <td>
+                            <h3> Surse externe </h3>
+                            <p>
+                                Le Grand Meaulnes <br>
+                                Corespondența cu Jacques Rivière<br>
+                                Scrisori micuței B...<br>
+                                Scrisori trimise familiei<br>
+                                Miracole (poeme)<br>
+                                Corespondență 1912-1914, Fayard, 1992<br>
+                                Colombe Blanchet - Schițe ale unui roman inedit<br>
+                            </p><br>
+
+
+                            <h3 style="border-radius: 10px; background-color: #f7e4d6;"> Existente pe site</h3>
+
+                            <a href="cărți.html#cararea_pierduta_pdf" target="_blank">Cărarea pierdută</a><br>
+                            <a href="cărți.html#le_grand_meaulnes_pdf" target="_blank">Le grand Meaulnes</a><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="amanda_quick">
+                            <div class="container3">
+                                <img src="Assets/Amanda_Quick.jpg" alt="Amanda Quick" class="image">
+                                <div class="overlay">Amanda Quick, 2013</div>
+                            </div>
+
+                            <h3>
+                                Amanda Quick
+                            </h3>
+                            <p class="year">1948</p>
+                            <p>Romantism</p>
+                        </td>
+                        <td>
+                            <h3> Biografie</h3>
+                            <p>
+                                <a href="https://en.wikipedia.org/wiki/Jayne_Ann_Krentz"><b>Jane Ann Krenz (Amanda
+                                        Quick)</b></a> este o scriitoare americană de renume. Cărțile ei nu părăsesc
+                                listele
+                                bestsellerurilor din New York Times. Ea și-a publicat romanele sub șapte nume diferite;
+                                acum
+                                scriitoarea folosește doar trei pseudonime. La întrebarea de ce are atât de multe nume,
+                                autoarea
+                                răspunde că, în acest caz, cititorul, după ce a deschis cartea, știe întotdeauna în care
+                                dintre
+                                cele
+                                trei lumi trebuie să intre.
+                                Amanda Quick este unul dintre pseudonimele scriitoarei Jane Krenz. S-a născut la
+                                28.03.1948
+                                în
+                                Cobb, California. A petrecut primii zece ani din viață în Borrego Springs. A absolvit
+                                Universitatea din California în 1970 cu o diplomă de licență în istorie. Convinsă că ar
+                                fi
+                                dificil să-și găsească un loc de muncă cu această diplomă, a decis să-și urmeze
+                                masteratul
+                                în
+                                biblioteconomie de la Universitatea din San Jose.
+
+
+                                După absolvire, se căsătorește cu inginerul Frank Krenz, pe care l-a cunoscut la
+                                universitate.
+                                Tânărul s-a mutat în Insulele Virgine, unde Jane a lucrat un an în școala elementară ca
+                                bibliotecară. În această perioadă a vieții, ea o numește un dezastru în cariera ei și se
+                                mută în
+                                sistemele de biblioteci ale Universității Duke.
+                            </p>
+                        </td>
+                        <td style="justify-content: center;">
+                            <h3>Surse Externe</h3>
+
+                            <p>Grădinile de cristal<br>
+                                Femeia misterioasă<br>
+                                Fata care știa prea multe<br>
+                                Doamna dispărută<br>
+                                Muchia dorinței<br>
+                                Joc fatal<br>
+                                Misterul Afroditei<br>
+                                Emma<br>
+                                Cumplita vaduvă<br>
+                                O iubire neconvențională<br>
+                                <i>Lista completă</i> <a
+                                    href="https://www.delicateseliterare.ro/lista-carti-amanda-quick/" target="_blank">
+                                    Aici </a>
+                            </p><br>
+
+                            <h3 style="border-radius: 10px; background-color: #f7e4d6;"> Existente pe site</h3>
+                            <p>
+                                <a href="cărți.html#alchimia_dragostei_pdf" target="_blank">Alchimia
+                                    Dragostei</a><br>
+
+                                <a href="cărți.html#nechibzuita_pdf" target="_blank">Nechibzuița</a><br>
+
+                                <a href="cărți.html#o_raza_de_speranta_pdf" target="_blank">O rază de
+                                    speranță</a><br>
+
+                                <a href="cărți.html#dorinta_pdf" target="_blank">Dorința</a><br>
+                            </p>
+
+
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td id="nichita_stanescu">
+                            <div class="container3">
+                                <img src="Assets/Nichita_stanescu.jpg" alt="Alain Fournier" class="image">
+                                <div class="overlay">Nichita Stănescu, Piatra Neamț, 1952
+                                </div>
+                            </div>
+                            <h3>
+                                Nichita Stănescu
+                            </h3>
+
+                            <p class="year">1933-1983</p>
+                            <p>Neomodernism</p>
+                        </td>
+                        <td>
+                            <h3> Biografie</h3>
+                            <p>
+                                <a href="https://ro.wikipedia.org/wiki/Nichita_St%C4%83nescu#Via%C8%9Ba_personal%C4%83"><b>Nichita
+                                        Stanescu</b></a> a fost un poet, scriitor și eseist roman, ales post-mortem
+                                membru
+                                al
+                                Academiei Romane.
+
+                                S-a nascut la 31 martie 1933 in Ploiesti. Tatal sau, comerciant, provine dintr-o familie
+                                de
+                                mici mestesugari si comercianti, la origine tarani prahoveni. Mama, Tatiana
+                                Cereaciuchin,
+                                este nascuta la Voronej intr-o familie de conditie nobila din zona Donetului. Nichita
+                                Stanescu devine al cincilea model important al poeziei romanesti din secolul XX, alaturi
+                                de
+                                Bacovia, Barbu, Blaga, Arghezi. intr-o istorie a formelor de expresie poetice, actiunea
+                                stanesciana propune un discurs extrem de original, asupra caruia critica va interveni
+                                abia
+                                de acum inainte.
+
+
+                            </p>
+                        </td>
+                        <td>
+                            <h3> Surse externe </h3>
+                            <p>
+                                Sensul Iubirii, 1960<br>
+                                O viziune a sentimentelor, 1964<br>
+                                Dreptul la timp, 1965<br>
+                                11 elegii, 1966<br>
+                                Necuvintele, 1969<br>
+                                Epica Magna, 1978<br>
+                                Operele imperfecte, 1979<br>
+                                <i>Lista completă</i> <a
+                                    href="https://ro.wikipedia.org/wiki/Nichita_St%C4%83nescu#Operele_lui_Nichita_St%C4%83nescu">Aici</a>
+                            </p><br>
+
+
+                            <h3 style="border-radius: 10px; background-color: #f7e4d6;"> Existente pe site</h3>
+
+                            <a href="cărți.html#tu_ai_un_fel_de_paradis_al_tau" target="_blank">Tu ai un fel de paradis
+                                al
+                                tău</a><br>
+
+
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td id="jrr_tolkien">
+                            <div class="container3">
+                                <img src="Assets/JRR_tolkien.webp" alt="JRR Tolkien" class="image">
+                                <div class="overlay"> J.R.R Tolkien, 1940
+                                </div>
+                            </div>
+                            <h3>
+                                J.R.R Tolkien
+                            </h3>
+
+                            <p class="year">1829-1973</p>
+                            <p>Fantezie</p>
+                        </td>
+                        <td>
+                            <h3> Biografie</h3>
+                            <p>
+                                <a href="https://ro.wikipedia.org/wiki/J._R._R._Tolkien#Biografie"><b>John Ronald Reuel
+                                        Tolkien</b></a> a fost un
+                                scriitor, poet, filolog și profesor de universitate englez, cunoscut cel mai bine pentru
+                                cărți fantastice clasice: Hobbitul și Stăpânul Inelelor.
+
+                                A fost profesor de anglo-saxonă la Oxford (mai exact la catedra Rawlinson and Bosworth)
+                                din
+                                1925 până în 1945 și profesor de limbă și literatură engleză din 1945 până în 1959. A
+                                fost
+                                un Romano-Catolic devotat și prietenul lui C. S. Lewis - amândoi fiind membri ai
+                                clubului de
+                                discuție cunoscut sub numele The Inklings.
+
+
+                            </p>
+                        </td>
+                        <td>
+                            <h3> Surse externe </h3>
+                            <p>
+                                A middle english vocabulary, 1992<br>
+                                Sir Gawain and the Green Knight, 1925<br>
+                                Some Contributions to Middle-English Lexicography, 1925<br>
+                                The Devil's Coach Horses, 1925<br>
+                                Ancrene Wisse and Hali Meiðhad, 1929<br>
+                                The Name 'Nodens', 1932<br>
+                                Sir Orfeo, Oxford, 1944<br>
+                                <i>Lista completă</i> <a
+                                    href="https://ro.wikipedia.org/wiki/Bibliografia_lui_J._R._R._Tolkien#Opere_academice_%C8%99i_altele">Aici</a>
+                            </p><br>
+
+
+                            <h3 style="border-radius: 10px; background-color: #f7e4d6;"> Existente pe site</h3>
+
+                            <a href="cărți.html#stapanul_inelelor_pdf" target="_blank">Stâpânul Inelelor</a><br>
+
+
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+    </main>
+    <!-- footer -->
+    <footer class="footer">
+        <div class="footer_content">
+            &copy; Andra Trifan
+        </div>
+    </footer>
+
+</body>
+
+</html>

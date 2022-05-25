@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <link rel="stylesheet" href="cărți.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,800,300' rel='stylesheet' type='text/css">
+    <title>Cărți</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/9db0d054af.js" crossorigin="anonymous"></script>
+
+   
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+        <!-- logo -->
+        <div class="container">
+            <div class="row">
+                <h1 class="logo">Bibliotecă Online</h1>
+            </div>
+        </div>
+
+        <!-- meniu -->
+
+        <div class="dropdown">
+            <button class="dropbtn"><i class="fa fa-bars" style="font-size: 1.73em;"></i></button>
+            <div class="dropdown-content">
+                <a href="index.html" class="active">Acasă</a>
+                <a href="cărți.html">Cărți</a>
+                <a href="despre_autor.html">Despre Autor</a>
+                <div id="recenzie">
+                    <a href="#">Recenzii</a>
+                    <div class="submenu">
+                        <a href="recenzii.html">Toate Recenziile</a>
+                        <a href="adauga_recenzie.html">Recenzia Ta</a>
+                    </div>
+
+                    <a href="login.html">LOGIN</a>
+                    <a href="sign_in.html">SIGN UP</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <script>
+            function openCity(evt, cityName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+        </script>
+
+        <div class="tab">
+            <button class="tablinks" onclick="openCity(event, 'Paris')">Video</button>
+            <button class="tablinks" onclick="openCity(event, 'Tokyo')">Imagini</button>
+        </div>
+
+
+        <div id="Paris" class="tabcontent">
+            <div class="container">
+                <div class="directions" id="direct1">
+                    <span class="left">
+                        <i class="fa-solid fa-chevron-up"></i>
+                    </span>
+                </div>
+                <div id="slider">
+
+                    <ul class="slides">
+                        <li class="slide">
+                            <video width="400" height="280" controls>
+                                <source src="Assets/video.mp4" type="video/mp4">
+                            </video>
+                        </li>
+                        <li class="slide"><img src="Assets/poza-1.jpg" style="width: 400px; height: 280px;"
+                                alt="Slide 2">
+                        </li>
+                        <li class="slide"><img src="Assets/poza-2.jpg" style="width: 400px; height: 280px;"
+                                alt="Slide 3">
+                        </li>
+                        <li class="slide"><img src="Assets/poza-3.jpg" style="width: 400px; height: 280px;"
+                                alt="Slide 4">
+                        </li>
+                        <li class="slide"><img src="Assets/poza-4.jpg" style="width: 400px; height: 280px;"
+                                alt="Slide 5">
+                        </li>
+                        <li class="slide"><img src="Assets/poza-5.jpg" style="width: 400px; height: 280px;"
+                                alt="Slide 6">
+                        </li>
+                        <li class="slide"><img src="Assets/poza-6.jpg" style="width: 400px; height: 280px;"
+                                alt="Slide 7">
+
+                        </li>
+                    
+                    </ul>
+
+                </div>
+                <div class="clearfix"></div>
+                <div class="directions" id="direct2">
+                    <span class="right">
+                        <i class="fa-solid fa-angle-down"></i>
+                    </span>
+                </div>
+                <div class="slider_input">
+                    <label> Număr imagini</label>
+                    <input type="number" id="nr_imagini" name="nr_imagini" min="1" max="7" step="1" class="nr_imagini"
+                        value="2">
+                    <label>Secunde</label>
+                    <select name="Secunde" id="timer">
+                        <option value="2000">2s</option>
+                        <option value="4000">4s</option>
+                        <option value="6000">6s</option>
+                    </select>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="Tokyo" class="tabcontent">
+            <div class="popup">
+                <img src="Assets/book-10.jpg">
+                <img src="Assets/book-8.jpg">
+                <img src="Assets/book-5.jpg">
+
+            </div>
+            <div class="show">
+                <div class="overlay"></div>
+                <div class="img-show">
+                    <span>X</span>
+                    <img src="">
+                </div>
+            </div>
+            <!--End image popup-->
+        </div>
+
+
+
+        <!-- continut principal 
+        <section>
+            <h5>Filtrează:</h5>
+            <details>
+
+                <summary>Tip</summary>
+                <div>
+                    <label>Ficțiune
+                        <input type="checkbox" checked="checked">
+                     
+                    </label>
+
+                    <label>Aventură
+                        <input type="checkbox">
+                      
+                    </label>
+
+                    <label>Dramă
+                        <input type="checkbox">
+                     
+                    </label>
+
+                    <label>Poezie
+                        <input type="checkbox">
+                      
+                    </label>
+                    <label>Istorie
+                        <input type="checkbox">
+                       
+                    </label>
+                    <label>Thriller
+                        <input type="checkbox">
+                      
+                    </label>
+                    <label>Cărți de dragoste
+                        <input type="checkbox">
+                       
+                    </label>
+                    <label>Psihologie și consiliere
+                        <input type="checkbox">
+                   
+                    </label>
+                    <label>Spiritualitate
+                        <input type="checkbox">
+                       
+                    </label>
+                    <label>Științe
+                        <input type="checkbox">
+                       
+                    </label>
+                    <label>Personalitate
+                        <input type="checkbox">
+                     
+                    </label>
+                    <label>Psihologia copilului
+                        <input type="checkbox">
+                        
+                    </label>
+                    <label>Psihologia femeii
+                        <input type="checkbox">
+                        
+                    </label>
+                    <label>Cărți de bucate
+                        <input type="checkbox">
+                       
+                    </label>
+                    <label>Călătorii,ghiduri,hărți
+                        <input type="checkbox">
+                        
+                    </label>
+                    <label>Toate
+                        <input type="checkbox">
+                      
+                    </label>
+                </div>
+            </details>
+        </section>
+
+        <section>
+            <h5>Ordonează:</h5>
+            <details>
+                <summary>Ttilu</summary>
+                <div>
+
+                    <input type="radio" id="crescator" name="sortare" value="Alfabetic crescător">
+                    <label>Alfabetic crescător</label><br>
+                    <input type="radio" id="descrescator" name="sortare" value="Alfabetic descrescător">
+                    <label>Alfabetic descrescător</label>
+                </div>
+            </details><br>
+        </section>-->
+
+        <!--
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <div class="slider">
+            <img id="img1" src="Assets/citat_1.jpg" alt="Trulli" width="250" height="150">
+            <img id="img2" src="Assets/citat_2.jpg" alt="Trulli" width="250" height="150">
+            <img id="img3" src="Assets/citat_3.webp" alt="Trulli" width="250" height="150">
+        </div>
+        <script>
+            $(document).ready(function () {
+                $("#img1").slideDown(500).delay(500).slideUp(500);
+                $("#img2").delay(1500).slideDown(500).delay(500).slideUp(500);
+                $("#img3").delay(3000).slideDown(500).delay(500).slideUp(500);
+                
+            });
+        </script>-->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>
+            $(function () {
+                "use strict";
+
+                $(".popup img").click(function () {
+                    var $src = $(this).attr("src");
+                    $(".show").fadeIn();
+                    $(".img-show img").attr("src", $src);
+                });
+
+                $("span, .overlay").click(function () {
+                    $(".show").fadeOut();
+                });
+
+            });
+        </script>
+
+        <script>
+            /*global $, alert, console*/
+            /*jslint plusplus: true*/
+            $(function () {
+                'use strict';
+                // Configurations
+                var width = 400,
+                    slidingTime = 2000,
+                    // showTime  = $("#timer").val(),
+                    showTime = 3000,
+                    slideNum = 1,
+                    slideClick = 300,
+                    // Cashing DOM
+                    container = $('.container'),
+                    slider_input = slides = $('.slider_input'),
+                    slides = $('.slides'),
+                    slider = $("#slider"),
+                    slide = slides.find('.slide'),
+                    marginLeft = slides.css('margin-left'),
+                    directions = $('.directions'),
+                    sliding;
+
+                function slideMe() {
+
+                    slides.animate({ 'margin-top': '-=' + width }, slidingTime, function () {
+                        slideNum++;
+
+                        if (slideNum === parseInt($("#nr_imagini").val())) {
+                            slideNum = 1;
+                            slides.css('margin-top', 0);
+                        }
+                    }
+                    )
+                };
+
+                $('.right').on("click", function () {
+
+                    slides.animate({ 'margin-top': '-=' + width }, slideClick, function () {
+                        slideNum++;
+                        if (slideNum === parseInt($("#nr_imagini").val())+1) {
+                            slideNum = 1;
+                            slides.css('margin-top', 0);
+                        }
+                        console.log(slideNum);
+
+                    }
+                    )
+
+                });
+
+                $('.left').on("click", function () {
+
+                    slides.animate({ 'margin-top': '+=' + width }, slideClick, function () {
+                        slideNum--;
+                        if (slideNum === 0) {
+                            slideNum = (parseInt($("#nr_imagini").val()) - 1);
+                            slides.css('margin-top', "-" + (width * (parseInt($("#nr_imagini").val()) - 2)) + "px");
+                        }
+                    }
+                    )
+                });
+
+                function letMeSlide() {
+                    sliding = setInterval(function () {
+
+                        slideMe();
+
+                    }, $("#timer").val());
+                }
+
+                function stopMe() {
+                    clearInterval(sliding);
+                }
+
+                container.on('mouseleave', stopMe);
+                container.on('mouseenter', stopMe).on('mouseleave', letMeSlide);
+                container
+                    .mouseover(function () {
+                        $("#direct1").css("display", "block");
+                        $("#direct2").css("display", "block");
+                    })
+                    .mouseout(function () {
+                        $("#direct1").css("display", "none");
+                        $("#direct2").css("display", "none");
+                    });
+
+
+            });
+        </script>
+
+
+        <div class="library_container">
+            <img class="container__image" src="Assets/Jurnalul_Annei_Frank.jpg" />
+            <div class="container__text">
+                <h2>Jurnalul Annei Frank, Anna Frank</h2>
+                <h4>Drama</h4>
+                <p>„Era o tanara scriitoare minunata.
+                    Era cineva la cei treisprezece ani ai ei.
+                    Parca ai vedea, la viteza marita, un film cu un fat care capata brusc chip si
+                    incepe
+                    sa stapaneasca lucrurile... dintr-odata, descopera reflectia, brusc, face
+                    portrete,
+                    schite de personaje, si iata lungi intamplari complicate, povestite atat de
+                    frumos,
+                    incat par sa aiba in spate zeci de ciorne.
+                    Si fara intentia otravita de-a fi interesanta sau profunda. Este ea insasi...
+                    Ardoarea, spiritul care o anima; mereu activ, punand mereu lucrurile in
+                    miscare... E
+                    ca o surioara pasionala a lui Kafka, este fetita lui pierduta.“ - <strong>Philip
+                        ROTH, The Ghost Writer</strong></p>
+                <a id="jurnalul_annei_frank_pdf" href="CărțiPDF/Jurnalul_Annei_Frank.pdf" target="_blank"><b>Jurnalul
+                        Annei
+                        Frank, Anna Frank</b></a><br>
+                <div>
+                    <a href="recenzii.html" target="_blank" class="button">Recenzii</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="library_container">
+            <img class="container__image" src="Assets/Hotul_de_carti.jpg">
+            <div class="container__text">
+                <h2>Hoțul de cărți</h2>
+                <h4>Ficțiune</h4>
+                <p>
+                    Descriere
+                    Este anul 1939. Germania nazista.
+                    Tara isi tine rasuflarea. Moartea nu a avut niciodata mai mult de lucru, si va
+                    deveni chiar mai ocupata.
+                    Liesel Meminger si fratele ei mai mic sunt dusi de catre mama lor sa locuiasca
+                    cu o
+                    familie sociala in afara orasului Munchen.
+                    Tatal lui Liesel a fost dus departe sub soapta unui singur cuvant nefamiliar -
+                    Kommunist -, iar Liesel vede in ochii mamei sale teama unui destin similar.
+                    Pe parcursul calatoriei, Moartea ii face o vizita baietelului si o observa pe
+                    Liesel.
+                    Va fi prima dintre multe intalniri apropiate.
+                    Langa mormantul fratelui ei, viata lui Liesel se schimba atunci cand ea ridica
+                    un
+                    singur obiect, ascuns partial in zapada.
+                    Este Manualul Groparului, lasat acolo din greseala, si este prima ei carte
+                    furata.
+                    Astfel incepe o poveste despre dragostea de carti si de cuvinte, pe masura ce
+                    Liesel
+                    invata sa citeasca cu ajutorul tatalui ei adoptiv, care canta la acordeon.
+                    In curand, va fura carti de la incendierile de carti organizate de nazisti, din
+                    biblioteca sotiei primarului, si de oriunde le mai putea gasi.
+                    Hotul de carti este o poveste despre puterea cuvintelor de a crea lumi.
+                    Cu o scriitura superb maiestrita si arzand cu intensitate, premiatul autor
+                    <strong>
+                        Marcus Zusak</strong> ne-a daruit una dintre cele mai durabile povesti ale
+                    timpurilor noastre.
+                </p>
+                <a href="CărțiPDF/Hotul_de_carti.pdf" target="_blank"><b>Hoțul de cărți, Marcus
+                        Zusak</b></a>
+                <div>
+                    <a href="recenzii.html" target="_blank" class="button">Recenzii</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="library_container">
+            <img class="container__image" src="Assets/Cararea_pierduta.jpg">
+            <div class="container__text">
+                <h2>Cărarea pierdută</h2>
+                <h4>Ficțiune</h4>
+                <p>
+                    Cartea autorului <strong>Alain Fournier</strong> are un pronuntat caracter
+                    autobiografic, intamplarile derulandu-se in perioada critica dintre adolescenta
+                    si
+                    maturitate, atunci cand visul se impleteste cu realul si dragostea cauta
+                    absolutul.
+                    Afectiunea lui Augustin, eroul romanului pentru frumoasa Yvonne este inspirata
+                    din
+                    zbuciumul unei iubiri neimpartasite a scriitorului.
+                    Doi prieteni, Augustin si Francois, aflati in cautarea unei relatii sentimentale
+                    pure,
+                    constietizeaza, fara a o marturisi, ca orice incercare de gasire a perfectiunii
+                    este
+                    sortita esecului.
+                    Prietenia poate sa cunoasca tradarea, pasiunea idealizata se poate transforma
+                    intr-o
+                    realitate carnala si cele mai pure vise ale tineretii pot fi schimbate de
+                    reversul
+                    crud
+                    al experientei.
+                    O poveste romantica, ca un final absolul mirific, poate cea mai frumoasa din
+                    cate
+                    s-au
+                    scris despre dorinta neimplinita. Si, mai mult ca sigur, o lectura ce va rezona
+                    cu
+                    sufletul cititorului, readucandu-i in memorie fiorii primei iubiri.
+                </p>
+                <a href="CărțiPDF/Cararea_pierduta.pdf" target="_blank" id="cararea_pierduta_pdf"><b>Cărarea piedută,
+                        Alain
+                        Fournier</b></a>
+                <div>
+                    <a href="recenzii.html" target="_blank" class="button">Recenzii</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="library_container">
+            <img class="container__image" src="Assets/Alchimia_dragostei.jpg">
+            <div class="container__text">
+                <h2>Alchimia Dragostei</h2>
+                <h4>Ficțiune</h4>
+                <p>
+                    <strong> Charlotte Arkendale </strong>stia totul despre barbati. In definitiv,
+                    isi
+                    construise o adevarata cariera de succes ajutand numeroase femei sa se fereasca
+                    de
+                    vanatorii de zestre. Cu toate acestea, nimic n-ar fi putut-o pregati pentru
+                    Baxter
+                    St.
+                    Ives; un strain captivant, dar prea indraznet, prea hotarat si prea periculos
+                    pentru
+                    ca
+                    Charlotte sa-l accepte cu inima impacata sa-i administreze veniturile.
+                    Insa el pare sa fie singura persoana care o poate ajuta sa investigheze moartea
+                    violenta
+                    a uneia dintre clientele sale.
+                    Cum insa si-ar fi putut da seama ca Baxter, un talentat om de stiinta, avea sa o
+                    transforme in subiectul unui experiment riscant pe tema alchimiei dorintei?
+                    Cand sentimentele ce se nasc intre cei doi eroi par sa ajunga la implinire, un
+                    pericolul
+                    neasteptat ameninta sa ii desparta, ori sa-i uneasca pentru totdeauna in moarte.
+                    Misterul si pasiunea se impletesc intr-o naratiune alerta, plina de suspans, cu
+                    personaje care reusesc sa evite sabloanele literaturii romantioase.
+                    <strong>Amanda Quick</strong> are in palmares numeroase premii literare, cartile
+                    sale
+                    vanzandu-se pana in prezent in peste 35 de milioane de exemplare.
+                </p>
+
+                <a href="CărțiPDF/Alichimia_Dragostei.pdf" target="_blank" id="alchimia_dragostei_pdf"><b>Alchimia
+                        Dragostei,Amanda
+                        Quick</b></a>
+                <div>
+                    <a href="recenzii.html" target="_blank" class="button">Recenzii</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="library_container">
+            <img class="container__image" src="Assets/Le_grand_meaulnes.jpg">
+            <div class="container__text">
+                <h2>Le grand meaulnes</h2>
+                <h4>Ficțiune</h4>
+                <p>
+
+                    <strong>Le Grand Meaulnesmeste</strong> singurul roman al autorului francez
+                    <strong>Alain-Fournier</strong>, care a
+                    fost ucis în prima lună a Primului Război Mondial.
+                    Romanul, publicat în 1913, cu un an înainte de moartea autorului, este oarecum
+                    autobiografică, mai ales numele eroinei Yvonne, pentru care a avut o pasiune
+                    de condamnat la Paris. François Seurel, în vârstă de cincisprezece ani,
+                    povestește
+                    povestea prieteniei sale cu Augustin Meaulnes, în vârstă de șaptesprezece ani,
+                    în
+                    timp ce Meaulnes își caută dragostea pierdută. Impulsiv, nesăbuit și eroic,
+                    Meaulnes
+                    întruchipează idealul romantic, căutarea de neatins și lumea misterioasă dintre
+                    copilărie și maturitate.
+                </p>
+                <a href="CărțiPDF/Alain_Fournier_Le_grand_Meaulnes.pdf" target="_blank" id="le_grand_meaulnes_pdf"><b>Le
+                        Grand
+                        Meaulnes,Alain Fournier</b></a>
+                <div>
+                    <a href="recenzii.html" target="_blank" class="button">Recenzii</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="library_container">
+            <img class="container__image" src="Assets/Dorinta.jpg">
+            <div class="container__text">
+                <h2>Dorința</h2>
+                <h4>Ficțiune</h4>
+                <p>
+                    Pe tarmul abrupt, batut de vanturi al unei insule britanice indepartate,
+                    destinele
+                    unei tinere nobile si al unui cavaler indraznet sunt legate de incercarile
+                    sortii si
+                    de dorinta nestavilita care se naste intre ei.
+                    La moartea tatalui ei, frumoasa si incapatanata Lady Clare stie ca trebuie sa se
+                    marite pentru a garanta protectia insulei pe care a mostenit-o. Dar atunci cand
+                    viitorul sot pe care i l-a ales seniorul tinutului intra calare pe poarta
+                    castelului, Lady Clare simte ca a fost tradata. Cu trupul calit in lupte si
+                    armura
+                    de otel stralucitor, Sir Gareth de Wyckmere este un cavaler de temut, departe de
+                    a
+                    fi poetul romantic pe care ea si l-a dorit. Sute de talhari au pierit pana acum
+                    de
+                    sabia Cerberului din Wyckmere, cum este poreclit, astfel ca temerarul razboinic
+                    nu
+                    are nici o indoiala ca-si va putea imblanzi sotia.
+                    Cu toate acestea, Lady Clare insista sa-l modeleze dupa idealul ei... pana cand
+                    ciocnirea dintre vointele lor va starni o pasiune incendiara, iar o urzeala
+                    malefica
+                    le va pune vietile in pericol.
+
+                </p>
+                <a href="CărțiPDF/Amanda_Quick_Dorinta.pdf" target="_blank" id="dorinta_pdf"><b>Dorința, Amanda
+                        Quick</b></a>
+                <div>
+                    <a href="recenzii.html" target="_blank" class="button">Recenzii</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="library_container">
+            <img class="container__image" src="Assets/Stapanul_inelelor.jpg">
+            <div class="container__text">
+                <h2>Stăpânul Inelelor</h2>
+                <h4>Aventură</h4>
+                <p>De-acum celebra trilogie a lui J.R.R. Tolkien, Stapanul Inelelor, continua
+                    povestea
+                    inceputa de autor in cartea sa Hobbitul.
+                    Sauron, seniorul Intunecimii, a reusit sa adune toate inelele puterii, dorinta
+                    lui
+                    fiind
+                    aceea de a stapani peste intregul Pamant de Mijloc.
+                    Dar pentru a-si indeplini visul ii lipseste un inel special.
+                    Aici va incepe odiseea tanarului hobbit Frodo, caruia i se incredinteaza o
+                    misiune
+                    ciudata, el nu trebuie sa gaseasca, ci sa ascunda o comoara.
+                    Sa ascunda Inelul.
+                    Frodo trebuie sa porneasca la drum din indragitul sau Comitat pana in
+                    intunecatul
+                    Mordor, ca sa distruga teribilul Inel si sa-i zadarniceasca Planurile lui
+                    Sauron.
+                    O sarcina uriasa pentru un hobbit atat de mic, dar Frodo nu va porni singur la
+                    drum.
+                    Reprezentantii celor mai importante semintii vor fi alaturi de el.</p>
+
+                <a href="CărțiPDF/Stapanul_inelelor_Fratia_inelului_JRR_Tolkien.pdf" target="_blank"
+                    id="stapanul_inelelor_pdf"><b>Stăpânul Inelelor, Partea I</b></a><br>
+                <a href="CărțiPDF/Stapanul_inelelor_Cele_doua_turnuri_JRR_Tolkien.pdf" target="_blank"><b>Stăpânul
+                        Inelelor, Partea II</b></a><br>
+                <a href="CărțiPDF/Stapanul-Inelelor-Intoarcerea-Regelui.pdf" target="_blank"><b>Stăpânul
+                        Inelelor, Partea III</b></a>
+                <div>
+                    <a href="recenzii.html" target="_blank" class="button">Recenzii</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="library_container">
+            <img class="container__image" src="Assets/Tu_ai_un_fel_de_paradis_al_tau.jpg">
+            <div class="container__text">
+                <h2>Tu ai un fel de paradis al tău</h2>
+                <h4>Poezie</h4>
+                <p>Premiul internaţional Johann Gottfried von Herder<br>
+
+                    „Un preot coborât din Tibet pentru a oficia în Europa de Est: <strong>Nichita
+                        Stănescu</strong>.”<br>
+
+                    — <strong>Adrian Păunescu</strong><br>
+
+                    „În generația noastră nimeni nu l-a egalat.”<br>
+
+                    — <strong>Fănuș Neagu</strong><br>
+
+                    „A fost un om și un poet total, setos de absolut.”<br>
+
+                    — <strong>Grigore Vieru</strong><br>
+                    „Un mare poet care cu închipuirile, jocurile, teoriile, stările şi abilităţile
+                    lui a
+                    schimbat faţa poeziei româneşti.”<br>
+
+                    — <strong>Eugen Simion</strong><br>
+
+                    „Eu nu sunt altceva decât o pată de sânge care vorbește.”<br>
+
+                    — <strong>Nichita Stănescu</strong><br>
+
+                    Nominalizat la Premiul Nobel pentru literarură</p>
+
+                <a href="CărțiPDF/Tu_ai_un_fel_de_paradis_al_tau_Nichits_Stanescu.pdf" target="_blank"
+                    id="Tu_ai_un_fel_de_paradis_al_tau_pdf"><b>Tu
+                        ai un fel de paradis al tau, Nichita Stănescu</b></a><br>
+                <div>
+                    <a href="recenzii.html" target="_blank" class="button">Recenzii</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="library_container">
+            <img class="container__image" src="Assets/Nechibzuita.jpg">
+            <div class="container__text">
+                <h2>Nechibzuița</h2>
+                <h>Cărți de dragoste</h>
+                <p>Cu inocenta celor saisprezece ani ai sai, Phoebe Layton isi inchipuise ca Gabriel
+                    Banner era un cavaler din povesti, un erou cu inima nobila.
+
+                    Dar, cu ocazia unui rendez-vous in miez de noapte, Phoebe descopera stupefiata
+                    ca
+                    are in fata un om total diferit de barbatul visurilor ei.
+
+                    Curand insa va fi randul pretentiosului conte sa rezolve o problema personala:
+                    sa o
+                    cucereasca pe cea mai intriganta, impulsiva, nerusinata femeie pe care a
+                    intalnit-o
+                    vreodata...
+
+                    <strong>Amanda Quick</strong> - Nechibzuința.
+                </p>
+
+                <a href="CărțiPDF/Amanda_Quick_Nechibzuinta.pdf" target="_blank" id="nechibzuita_pdf"><b>Nechibzuița,
+                        Amanda
+                        Quick</b></a><br>
+                <div>
+                    <a href="recenzii.html" target="_blank" class="button">Recenzii</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="library_container">
+            <img class="container__image" src="Assets/O_raza_de_speranta.gif">
+            <div class="container__text">
+                <h2>O rază de speranță</h2>
+                <h>Cărți de dragoste</h>
+                <p>
+                    ”O raza de speranta” apare atunci cand nu te astepti
+                    Mattie Sharp are succes profesional, dar este timida si fara noroc in dragoste.
+                    Frumusica este un rafinat critic de arta care se ocupa cu vanzarea tablourilor.
+                    Dar
+                    se indragosteste de un adevarat ”om al cavernelor”, un barbat fara maniere, dar
+                    foarte chipes. Hugh Abbott e un om dintr-o bucata si un aventurier de profesie.
+                    Locuieste pe o insula, intr-o zona salbatica. Dupa ce are o aventura de o noapte
+                    cu
+                    el, Mattie se hotaraste sa-l urmeze pana la capatul lumii. Dupa ce se izbeste de
+                    refuzul lui, fata isi promite ca nu se mai vedea cu el nici moarta. In mod
+                    ciudat, o
+                    crima ii aduce din nou impreuna. Dupa ce ea si sora ei dau peste un cadavru in
+                    curtea casei de vacanta unde isi petreceau concediul, viata lor ajunge sa fie
+                    amenintata. In cursa lor pentru a se salva, le vine in ajutor chiar Hugh care le
+                    ghideaza prin paradisul exotic plin de capcane al insulei. Este greu sa te
+                    bazezi pe
+                    cel care ti-a tradat increderea, dar cand nu ai incotro…
+                </p>
+                <a href="CărțiPDF/Amanda_Quick_O_raza_de_speranta.pdf" target="_blank" id="o_raza_de_speranta_pdf"><b>O
+                        rază de
+                        speranță, Amanda Quick</b></a><br>
+                <div>
+                    <a href="recenzii.html" target="_blank" class="button">Recenzii</a>
+                </div>
+            </div>
+        </div>
+
+
+
+    </main>
+    <!-- footer -->
+    <footer class="footer">
+        <div class="footer_content">
+            &copy; Andra Trifan
+        </div>
+    </footer>
+</body>
+
+</html>

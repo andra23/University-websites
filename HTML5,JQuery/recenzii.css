@@ -1,0 +1,309 @@
+header {
+    background: linear-gradient(to right, white, #dba882);
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 4px 3px 8px 1px #969696;
+    -webkit-box-shadow: 4px 3px 8px 1px #969696;
+
+}
+
+header,
+main {
+    margin: 1rem 0;
+}
+
+main *+* {
+    position: relative;
+    z-index: 1;
+
+    margin-bottom: 10px;
+   
+
+}
+
+body {
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+
+
+}
+
+.logo{
+    color:  #663300;
+    letter-spacing: 8px;
+    
+  }
+  
+  .logo:hover{
+    color:  #663300;
+    letter-spacing: 8px;
+    animation: text 3s 1;
+  }
+
+@keyframes text {
+    0% {
+        color: black;
+
+    }
+
+    30% {
+        letter-spacing: 25px;
+
+    }
+
+    85% {
+        letter-spacing: 8px;
+
+    }
+}
+
+/* MENU */
+
+.dropbtn {
+    background-color: #dba882;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+
+
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    right: 0;
+
+
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+
+}
+
+.dropdown-content a:hover {
+    background-color: #e0b596;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #e0b596;
+}
+
+
+.dropdown_content a.active {
+    background-color: #dba882;
+    color: white;
+}
+
+.submenu {
+    display: none;
+    background-color: #e0cfc2;
+
+}
+
+#recenzie:hover>.submenu {
+    display: block;
+}
+
+/* SERACH BAR */
+
+.search-container form {
+   
+    padding-bottom: 60px;
+    border-width: 2px; 
+    position: relative;
+ 
+
+}
+
+.input:focus {
+    border-radius: 30px;
+    padding: 10px;
+    background-color: #f8e1d1;
+
+}
+
+.input {
+    border-radius: 30px;
+    padding: 10px;
+    background-color: #f8e1d1;
+
+}
+
+
+
+
+.search-container form button {
+    
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 50px;
+    background: transparent;
+    border: transparent;
+    font-size: 20px;
+    color: #663300;
+    cursor: pointer;
+    outline: 0;
+
+}
+
+
+.footer {
+
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.footer_content {
+    background-color: #e0cfc2;
+    height: 30px;
+    text-align: center;
+}
+
+.th,
+td {
+    background-color: rgb(247, 230, 211);
+    border-radius: 20px;
+    padding: 3px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+@media only screen and (max-width: 1370px) {
+    .search-container form{
+        left: 80%;
+        padding-bottom: 60px;
+        border-width: 2px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .search-container form{
+        position: relative;
+        left: 70%;
+        padding-bottom: 60px;
+        border-width: 2px;
+    }
+}
+
+/*.mySlides {
+    transition: 2s all ease-in-out;
+    opacity: 0;
+    display: inline-block;
+}
+
+.item{
+    display: inline-block;
+}
+
+.fadein {
+    animation: fadeIn 0.9s 1;
+    animation-fill-mode: forwards;
+}
+*/
+
+.list{
+    display:flex;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.paragraf{
+   
+    padding: 1em; 
+    border-radius: 30px;
+    background-color: rgb(247, 230, 211);
+    width: 200px;
+    height: 200px; 
+   
+}
+.div{
+    width: 200px;
+    height: 200px;
+    margin-left: 5px;
+    padding: 1.7em;
+   
+   
+}
+.link{
+    
+    left: 42%;
+    background-color: #dba882;
+    border-radius: 20px;
+    padding: 5px;
+    bottom: 20px;
+    text-decoration: none;  
+}
+
+/* Next & previous buttons */
+.prev, .next {
+	cursor: pointer;
+	position: absolute;
+	top: 40%;
+	width: auto;
+	padding: 16px;
+	margin-top: -22px;
+	color:#e0b596;
+	font-weight: bold;
+	font-size: 18px;
+	transition: 0.6s ease;
+	border-radius: 20px;
+}
+/* Position the "next button" to the right */
+.next {
+	right: 0;
+	border-radius: 20px;
+}
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+	background-color:#58493e;
+}
+
+/* Fading animation */
+
+.mySlides {
+	display: none;
+    transition: 2s all ease-in-out;
+    opacity: 0;
+}
+
+
+/* Fading animation */
+.fade {
+	animation: fadeIn 0.9s 1;
+    animation-fill-mode: forwards;
+}
+
+
+

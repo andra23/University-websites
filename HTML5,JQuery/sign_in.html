@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <title>Sign in</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="sign_in.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,800,300' rel='stylesheet' type='text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/9db0d054af.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <!-- logo -->
+    <header>
+        <!-- logo -->
+        <div class="container">
+            <div class="row">
+                <h1 class="logo">Bibliotecă Online</h1>
+            </div>
+        </div>
+
+        <!-- meniu -->
+
+        <div class="dropdown">
+            <button class="dropbtn"><i class="fa fa-bars" style="font-size: 1.73em;"></i></button>
+            <div class="dropdown-content">
+                <a href="index.html" class="active">Acasă</a>
+                <a href="cărți.html">Cărți</a>
+                <a href="despre_autor.html">Despre Autor</a>
+                <div id="recenzie">
+                    <a href="#">Recenzii</a>
+                    <div class="submenu">
+                        <a href="recenzii.html">Toate Recenziile</a>
+                        <a href="adauga_recenzie.html">Recenzia ta</a>
+                    </div>
+                <a href="login.html">LOGIN</a>
+                </div>
+               
+            </div>
+        </div>
+    </header>
+    <main>
+        
+        <h3> SIGN IN</h3>
+
+        <div class="form-style-3">
+            
+            <form id="sign_form" onsubmit="return validateForm()">
+            <fieldset><legend>SIGN IN</legend>
+            <label for="email">
+                <span>Email <span class="required">*</span></span><input type="email" class="input_field" name="email" />
+                <i class="fa-solid fa-circle" id="bullet9"></i>
+            </label>
+            <label for="parola"><span>Parola <span class="required">*</span></span><input type="text" class="input_field" name="parola"/>
+                <i class="fa-solid fa-circle" id="bullet10"></i>
+            </label>
+            <script>
+                function validateForm(){
+
+                var nume = document.forms["sign_form"]["email"].value;
+                var parola = document.forms["sign_form"]["parola"].value;
+                const bullet10 = document.querySelector('#bullet10');
+               
+                     if(!email.match(/^([a-zA-Z0-9_\.])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/) && mail !=''){
+                    event.preventDefault();
+                    bullet9.style.color = "red";
+                    bullet9.style.display = "inline";
+                   // console.log("fals");
+                    return false;
+                }
+                if(!parola.match(/^[0-9A-Za-z\_]+$/)){
+                   // alert("fals");
+                    event.preventDefault();
+                    bullet10.style.color = "red";
+                    bullet10.style.display = "inline";
+                    console.log("fals");
+                    return false;
+                }  
+            } 
+                </script>
+                
+            </fieldset>
+            <fieldset>
+            <label><span> </span><input type="submit" value="Submit" /></label>
+            </fieldset>
+            </form>
+            </div>  
+            
+        
+    </main>
+    <!-- footer -->
+    <footer class="footer">
+        <div class="footer_content">
+            &copy; Andra Trifan
+        </div>
+    </footer>
+
+</body>
+
+</html>

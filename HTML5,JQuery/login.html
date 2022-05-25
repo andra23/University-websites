@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="login.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,800,300' rel='stylesheet' type='text/css">
+    <script src="https://kit.fontawesome.com/9db0d054af.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <!-- header -->
+    <!-- logo -->
+    <header>
+        <!-- logo -->
+        <div class="container">
+            <div class="row">
+                <h1 class="logo">Bibliotecă Online</h1>
+            </div>
+        </div>
+
+        <!-- meniu -->
+
+        <div class="dropdown">
+            <button class="dropbtn"><i class="fa fa-bars" style="font-size: 1.73em;"></i></button>
+            <div class="dropdown-content">
+                <a href="index.html" class="active">Acasă</a>
+                <a href="cărți.html">Cărți</a>
+                <a href="despre_autor.html">Despre Autor</a>
+                <div id="recenzie">
+                    <a href="#">Recenzii</a>
+                    <div class="submenu">
+                        <a href="recenzii.html">Toate Recenziile</a>
+                        <a href="adauga_recenzie.html">Recenzia Ta</a>
+                    </div>
+                    <a href="login.html">LOGIN</a>
+                    <a href="sign_in.html">SIGN UP</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+
+        <h3> LOGIN</h3>
+        <div class="form-style-3">
+            <form id="login_form" onsubmit="return validateForm()">
+                <fieldset>
+                    <legend>Date înregistrare</legend>
+                    <div class="input_control">
+                        <label for="nume"><span>Nume și prenume <span class="required">*</span></span>
+                            <input id="nume" type="text" class="input-field" name="nume" />
+                            <i class="fa-solid fa-circle" id="bullet5"></i>
+                        </label>
+
+                    </div>
+                    <div class="input_control">
+                        <label for="user"><span>Nume de utilizator <span class="required">*</span></span>
+                            <input id="user" type="text" class="input-field" name="user" />
+                            <i class="fa-solid fa-circle" id="bullet1"></i>
+                        </label>
+                    </div>
+                    <label for="mail"><span>Adresa de email <span class="required">*</span></span>
+                        <input id="mail" type="email" class="input-field" name="mail" />
+                        <i class="fa-solid fa-circle" id="bullet2"></i>
+                    </label>
+                    <label for="tel"><span>Număr de telefon <span class="required">*</span></span>
+                        <input id="tel" type="text" class="input-field" name="tel" />
+                        <i class="fa-solid fa-circle" id="bullet6"></i>
+                    </label>
+                
+                    <label for="field4"><span>Județ</span>
+                        <select name="judet" class="s1" id="s1" onchange="insertOptions('judet','oras')">
+                            <option value="Select">Select</option>
+                            <option value="Alba">Alba</option>
+                            <option value="Cluj">Cluj</option>
+                            <option value="Neamț">Neamț</option>
+                            <option value="Prahova">Prahova</option>
+                        </select></label>
+                    <label for="field4"><span>Oraș</span>
+                        <select name="oras" class="s2" id="s2">
+                            <option value="--">--</option>
+                        </select></label>
+
+                    <script type="text/javascript">
+                        function removeAll(s2) {
+                            for (var i = s2.options.length; i >= 0; i--) {
+                                s2.remove(i);
+
+                            }
+                        }
+                        function insertOptions(s1, s2) {
+                            var s1 = document.getElementById('s1');
+                            var s2 = document.getElementById('s2');
+                            if (s1.options[s1.selectedIndex].value == "Alba") {
+                                var opt1 = document.createElement('option');
+                                var opt2 = document.createElement('option');
+                                var opt3 = document.createElement('option');
+                                var opt4 = document.createElement('option');
+                                var opt5 = document.createElement('option');
+                                var opt6 = document.createElement('option');
+                                var opt7 = document.createElement('option');
+                                var opt8 = document.createElement('option');
+                                var opt9 = document.createElement('option');
+                                var opt10 = document.createElement('option');
+                                var opt11 = document.createElement('option');
+                                opt1.value = "Alba Iulia";
+                                opt2.value = "Sebeș";
+                                opt3.value = "Aiud";
+                                opt4.value = "Cugir";
+                                opt5.value = "Blaj";
+                                opt6.value = "Ocna Mureș";
+                                opt7.value = "Zlatna";
+                                opt8.value = "Câmpeni";
+                                opt9.value = "Teiuș";
+                                opt10.value = "Abrud";
+                                opt11.value = "Baia de Aries";
+
+                                opt1.innerHTML = "Alba Iulia";
+                                opt2.innerHTML = "Sebeș";
+                                opt3.innerHTML = "Aiud";
+                                opt4.innerHTML = "Cugir";
+                                opt5.innerHTML = "Blaj";
+                                opt6.innerHTML = "Ocna Mureș";
+                                opt7.innerHTML = "Zlatna";
+                                opt8.innerHTML = "Câmpeni";
+                                opt9.innerHTML = "Teiuș";
+                                opt10.innerHTML = "Abrud";
+                                opt11.innerHTML = "Baia de Aries";
+
+                                removeAll(s2);
+                                s2.options.add(opt1);
+                                s2.options.add(opt2);
+                                s2.options.add(opt3);
+                                s2.options.add(opt4);
+                                s2.options.add(opt5);
+                                s2.options.add(opt6);
+                                s2.options.add(opt7);
+                                s2.options.add(opt8);
+                                s2.options.add(opt9);
+                                s2.options.add(opt10);
+                                s2.options.add(opt11);
+
+                            }
+                            else if (s1.options[s1.selectedIndex].value == "Cluj") {
+                                var opt1 = document.createElement('option');
+                                var opt2 = document.createElement('option');
+                                var opt3 = document.createElement('option');
+                                var opt4 = document.createElement('option');
+                                var opt5 = document.createElement('option');
+                                var opt6 = document.createElement('option');
+                                opt1.value = "Cluj-Napoca";
+                                opt2.value = "Turda";
+                                opt3.value = "Dej";
+                                opt4.value = "Câmpia-Turzii";
+                                opt5.value = "Gherla";
+                                opt6.value = "Huedin";
+
+                                opt1.innerHTML = "Cluj-Napoca";
+                                opt2.innerHTML = "Turda";
+                                opt3.innerHTML = "Dej";
+                                opt4.innerHTML = "Câmpia-Turzii";
+                                opt5.innerHTML = "Gherla";
+                                opt6.innerHTML = "Huedin";
+
+                                removeAll(s2);
+                                s2.options.add(opt1);
+                                s2.options.add(opt2);
+                                s2.options.add(opt3);
+                                s2.options.add(opt4);
+                                s2.options.add(opt5);
+                                s2.options.add(opt6);
+
+                            }
+                            else if (s1.options[s1.selectedIndex].value == "Neamț") {
+                                var opt1 = document.createElement('option');
+                                var opt2 = document.createElement('option');
+                                var opt3 = document.createElement('option');
+                                var opt4 = document.createElement('option');
+                                var opt5 = document.createElement('option');
+
+                                opt1.value = "Piatra-Nemaț";
+                                opt2.value = "Roman";
+                                opt3.value = "Târgu-Neamț";
+                                opt4.value = "Roznov";
+                                opt5.value = "Bicaz";
+
+                                opt1.innerHTML = "Piatra-Nemaț";
+                                opt2.innerHTML = "Roman";
+                                opt3.innerHTML = "Târgu-Neamț";
+                                opt4.innerHTML = "Roznov";
+                                opt5.innerHTML = "Bicaz";
+
+                                removeAll(s2);
+                                s2.options.add(opt1);
+                                s2.options.add(opt2);
+                                s2.options.add(opt3);
+                                s2.options.add(opt4);
+                                s2.options.add(opt5);
+
+                            }
+                            else if (s1.options[s1.selectedIndex].value == "Prahova") {
+                                var opt1 = document.createElement('option');
+                                var opt2 = document.createElement('option');
+                                var opt3 = document.createElement('option');
+                                var opt4 = document.createElement('option');
+                                var opt5 = document.createElement('option');
+                                var opt6 = document.createElement('option');
+                                var opt7 = document.createElement('option');
+                                var opt8 = document.createElement('option');
+                                var opt9 = document.createElement('option');
+                                var opt10 = document.createElement('option');
+                                var opt11 = document.createElement('option');
+                                var opt12 = document.createElement('option');
+                                var opt13 = document.createElement('option');
+                                var opt14 = document.createElement('option');
+
+                                opt1.value = "Ploiești";
+                                opt2.value = "Câmpina";
+                                opt3.value = "Băicoi";
+                                opt4.value = "Breaza";
+                                opt5.value = "Mizil";
+                                opt6.value = "Comarnic";
+                                opt7.value = "Vălenii de Munte";
+                                opt8.value = "Boldești-Scăeni";
+                                opt9.value = "Urlați";
+                                opt10.value = "Sinaia";
+                                opt11.value = "Bușteni";
+                                opt12.value = "Plopeni";
+                                opt13.value = "Slănic";
+                                opt14.value = "Azuga";
+
+                                opt1.innerHTML = "Ploiești";
+                                opt2.innerHTML = "Câmpina";
+                                opt3.innerHTML = "Băicoi";
+                                opt4.innerHTML = "Breaza";
+                                opt5.innerHTML = "Mizil";
+                                opt6.innerHTML = "Comarnic";
+                                opt7.innerHTML = "Vălenii de Munte";
+                                opt8.innerHTML = "Boldești-Scăeni";
+                                opt9.innerHTML = "Urlați";
+                                opt10.innerHTML = "Sinaia";
+                                opt11.innerHTML = "Bușteni";
+                                opt12.innerHTML = "Plopeni";
+                                opt13.innerHTML = "Slănic";
+                                opt14.innerHTML = "Azuga";
+
+                                removeAll(s2);
+                                s2.options.add(opt1);
+                                s2.options.add(opt2);
+                                s2.options.add(opt3);
+                                s2.options.add(opt4);
+                                s2.options.add(opt5);
+                                s2.options.add(opt6);
+                                s2.options.add(opt7);
+                                s2.options.add(opt8);
+                                s2.options.add(opt9);
+                                s2.options.add(opt10);
+                                s2.options.add(opt11);
+                                s2.options.add(opt12);
+                                s2.options.add(opt13);
+                                s2.options.add(opt14);
+
+                            }
+                            else {
+                                var opt1 = document.createElement('option');
+                                opt1.value = "--";
+                                opt1.innerHTML = "--";
+                                removeAll(s2);
+                                s2.options.add(opt1);
+
+                            }
+
+                        }
+                    </script>
+
+                    <label for="parola"><span>Parola <span class="required">*</span></span>
+                        <input id="parola" type="password" class="input-field" name="parola" />
+                        <i class="fa-solid fa-circle" id="bullet3"></i>
+                    </label>
+                    <label for="field5"><span>Repetă parola <span class="required">*</span></span>
+                        <input id="rparola" type="password" class="input-field" name="parola" />
+                        <i class="fa-solid fa-circle" id="bullet4"></i>
+                    </label>
+                    <label for="field6"><span>Data nașterii </span>
+                        <input id="data" type="date" class="input-field" name="data" />
+                    </label>
+                    <label for="field8"><span>Țară <span class="required">*</span></span>
+                        <input type="text" class="input-field" name="field1" value="România" readonly />
+                    </label>
+                    <label for="field10"><span>Se păstrează datele mele </span>
+                        <input type="checkbox" class="input-field" name="field1" />
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <label><span> </span>
+                        <input type="submit" value="Submit" />
+                    </label>
+                </fieldset>
+            </form>
+        </div>
+
+        <script>
+            const nume = document.querySelector('#nume');
+            const username = document.querySelector('#user');
+            const email = document.querySelector('#mail');
+            const parola = document.querySelector('#parola');
+            const rparola = document.querySelector('#rparola');
+            const tel = document.querySelector('#tel');
+
+            /* Validare Username */
+
+            username.addEventListener('input', function () {
+                if (!this.value.match(/^[0-9a-z\ ]+$/) && this.value != '') {
+                    bullet1.style.color = "red";
+                    bullet1.style.display = "inline";
+                }
+                else if (this.value.match(/^[0-9a-z\ ]+$/) && this.value != '') {
+                    bullet1.style.color = "#66c144";
+                    bullet1.style.display = "inline";
+                }
+                else {
+                    bullet1.style.display = 'none';
+                }
+            });
+            /* Validare adresa de email */
+
+            email.addEventListener('input', function () {
+                if (!this.value.match(/^([a-zA-Z0-9_\.])*@([a-zA-Z0-9]*)\.+([a-zA-Z0-9]*)+$/) && this.value != '') {
+                    bullet2.style.color = "red";
+                    bullet2.style.display = "inline";
+                }
+                else if (this.value.match(/^([a-zA-Z0-9_\.])*@([a-zA-Z0-9]*)\.+([a-zA-Z0-9]*)+$/) && this.value != '') {
+                    bullet2.style.color = "#66c144";
+                    bullet2.style.display = "inline";
+                }
+                else {
+                    bullet2.style.display = 'none';
+                }
+            });
+
+            /* Validare parola */
+
+            parola.addEventListener('input', function () {
+                if (!this.value.match(/^[0-9A-Za-z\!]+$/) && this.value != '') {
+                    bullet3.style.color = "red";
+                    bullet3.style.display = "inline";
+                }
+                else if (this.value.match(/^[0-9A-Za-z\!]+$/) && this.value != '') {
+                    bullet3.style.color = "#66c144";
+                    bullet3.style.display = "inline";
+                }
+                else {
+                    bullet3.style.display = 'none';
+                }
+            });
+            rparola.addEventListener('input', function () {
+                if (!this.value.match(/^[0-9A-Za-z\!]+$/) && this.value != '') {
+                    bullet4.style.color = "red";
+                    bullet4.style.display = "inline";
+                }
+                else if (this.value.match(/^[0-9A-Za-z\!]+$/) && this.value != '') {
+                    bullet4.style.color = "#66c144";
+                    bullet4.style.display = "inline";
+                }
+                else {
+                    bullet4.style.display = 'none';
+                }
+            });
+            /* Validare Nr. tel */
+            tel.addEventListener('input', function () {
+                if (!this.value.match(/^\(\+([0-9]{2})\)[ ]([0-9]{3})[ ]([0-9]{3})[ ]([0-9]{3})$/) && this.value != '') {
+                    bullet6.style.color = "red";
+                    bullet6.style.display = "inline";
+                }
+                else if (this.value.match(/^\(\+([0-9]{2})\)[ ]([0-9]{3})[ ]([0-9]{3})[ ]([0-9]{3})$/) && this.value != '') {
+                    bullet6.style.color = "#66c144";
+                    bullet6.style.display = "inline";
+                }
+                else {
+                    bullet6.style.display = 'none';
+                }
+            });
+
+            /*VALIDARE LA SUBMIT*/
+            function validateForm() {
+                var nume = document.forms["login_form"]["nume"].value;
+
+                console.log(nume);
+                if (!nume.match(/^[A-Za-z]+$/) && nume != '') {
+                    event.preventDefault();
+                    bullet5.style.color = "red";
+                    bullet5.style.display = "inline";
+                    console.log("fals");
+                    return false;
+                }
+
+                if (!mail.match(/^([a-zA-Z0-9_\.])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/) && mail != '') {
+                    bullet2.style.color = "red";
+                    bullet2.style.display = "inline";
+                    return false;
+                }
+                else {
+                    return true;
+                }
+
+            }
+
+
+
+        </script>
+
+
+    </main>
+    <!-- footer -->
+    <footer class="footer">
+        <div class="footer_content">
+            &copy; Andra Trifan
+        </div>
+    </footer>
+
+</body>
+
+</html>
